@@ -3,6 +3,11 @@ name: Second Workflow
 on:
   repository_dispatch:
     types: [start-second-workflow]
+  workflow_run:
+    workflows: ["First Workflow"]
+    types:
+    -completed
+    
  
 jobs:
   run-second-job:
